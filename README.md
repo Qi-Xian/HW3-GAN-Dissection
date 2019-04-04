@@ -6,7 +6,7 @@
 2.  Dissect any GAN model and analyze what you find
 3.  Compare with other method
 
-參考網頁:[Inpainting](https://github.com/akmtn/pytorch-siggraph2017-inpainting)
+
 
 
 ## GANDissect介紹 <a href="http://gandissect.res.ibm.com/ganpaint.html?project=churchoutdoor&layer=layer4"><img src='doc/ganpaint.gif' align="right" height="259"></a>
@@ -114,3 +114,6 @@ Other URLs:
 
 ## Acknowledgments
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
+
+##reference
+參考網頁:[Inpainting](https://github.com/akmtn/pytorch-siggraph2017-inpainting)
