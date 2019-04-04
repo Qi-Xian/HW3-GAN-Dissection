@@ -21,11 +21,19 @@ This repo allows you to dissect a GAN model. It provides the dissection results 
 
 GAN paint app的工作原理是直接激活或者去激活深度網絡中的神經元組，這些神經元被訓練用來生成圖像。左邊每個按鈕（如door、brick等）都對應20個神經元。該app表明，通過學習繪畫，GAN網絡還能學習樹、門還有屋頂等對象。通過直接切換神經元，你可以觀察該網絡建模的視覺世界的結構。
 
-使用了
+我們使用了這個GANPaint工具來玩幾個樣式：
 
+### 樣式1
+如最左是我們原始圖片，我們實驗了 addTrees_addGrass, addTrees, addsky, addDome 幾個結果。
 ![](pictures_1/1.png)
+### 樣式2
+如最左是我們原始圖片，我們實驗了 addGrass_addDoors_addDomes,addGrass_addDoors, addGrass, addsky 幾個結果。
 ![](pictures_1/2.png)
+### 樣式3
+如最左是我們原始圖片，我們實驗了 removesDomes_addTrees_addGrass_addClouds,removeBricks_addClouds, addGrass_addtrees 幾個結果。
 ![](pictures_1/3.png)
+
+**結論：我們在實驗過程發現，只要是相關性高的元素，Ganpiant會給我們最佳的繪圖效果，例如，當我們要在草地上加樹時，生成的效果最大，但是如果我們要在天空增加樹林，效果生成就不會太大，但是在天空加入雲效果就會非常的好：**
 
 
 
