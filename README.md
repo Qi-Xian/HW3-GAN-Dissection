@@ -123,18 +123,18 @@ Other URLs:
     interface for testing interventions.
 - TODO: [http://localhost:5001/ganpaint.html](http://localhost:5001/ganpaint.html) will serve GANpaint
 
-成功啟動church_outdoor_model，我們來分析layer1, layer4, layer7 結果ioa（interest of area）狀況：
+成功啟動church_outdoor_model，我們來分析layer1, layer4, layer7 結果IoU（Area of Overlap / Area of Union）狀況：
 
 ### layer1層分析
-如下圖，我們分析出layer1層的IoA的狀況，在grass及tree兩張圖，ioa的錯誤率是蠻大的，這是因為第一層的狀況仍未訓練出好的參數，導致錯誤率發生極大。
+如下圖，我們分析出layer1層的IoU的狀況，在grass及tree兩張圖，ioa的錯誤率是蠻大的，這是因為第一層的狀況仍未訓練出好的參數，導致錯誤率發生極大。
 
 ![](pictures2/layer1.png)
 ### layer4層分析
-如下圖，我們分析出layer4層的IoA的狀況，除了tree其中一張圖沒找到符合的元素外，ioa的情況其實訓練得非常好，幾乎可以找得到我們要的target。
+如下圖，我們分析出layer4層的IoU的狀況，除了tree其中一張圖沒找到符合的元素外，ioa的情況其實訓練得非常好，幾乎可以找得到我們要的target。
 ![](pictures2/layer4_1.png)
 ![](pictures2/layer4_2.png)
 ### layer7層分析
-如下圖，整體的ioa表現的非常好，該有的目標都有達到（tree, cloud, grass, sky, window），訓練生成的目標達到我們的期望（優於layer1 及 layer4）
+如下圖，整體的IoU表現的非常好，該有的目標都有達到（tree, cloud, grass, sky, window），訓練生成的目標達到我們的期望（優於layer1 及 layer4）
 ![](pictures2/layer7_1.png)
 ![](pictures2/layer7_2.png)
 
@@ -143,7 +143,13 @@ Other URLs:
 |  層數 |layer1層 | layer4層 | layer7層
 | ---  |--- | --- | --- |
 |效果   |poor | medium | **best**
-|正確率 |15% | 70% | 99%
+|正確率 |15% | 70% | 99%  （計算方式：正確張數/總張數）
+## 3.  Compare with other method（Detectron method）
+
+Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自定義模型，並把它們用在增強現實、社區完整性等各種各樣的任務中。在 Detectron 中訓練完畢的模型可以直接通過高效的 Caffe 2  運行時部署在雲服務器和移動設備上，Detectron  的 GitHub  項目中還帶有超過 70 個預訓練的基準模型可以用於性能對比。Detectron 在背後支持的算法為實例分割之類的重要計算機視覺任務提供了直觀的模型，也在視覺感知系統這一整個研究社區的研究重點近幾年的飛速發展中起到了重要作用。如下圖所示：
+
+
+
 
 ## Acknowledgments
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
