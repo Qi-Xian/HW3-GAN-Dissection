@@ -1,4 +1,4 @@
-# homework3-GAN-Dissection
+#HW3-GAN-Dissection
 
 ## To-Do
 
@@ -125,7 +125,11 @@ Other URLs:
 
 成功啟動church_outdoor_model，我們來分析layer1, layer4, layer7 結果ioa（interest of area）狀況：
 
-
+![](pictures2/layer1.png)
+![](pictures2/layer4_1.png)
+![](pictures2/layer4_2.png)
+![](pictures2/layer7_1.png)
+![](pictures2/layer7_2.png)
 
 
 ## Acknowledgments
