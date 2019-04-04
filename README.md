@@ -169,15 +169,39 @@ Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自�
 先講結論：如果該 Unit 與某個類別是相關的，那麼其 Feature map(想像成熱力圖)會與語意分割後該類別的 Mask 相似。
 
 透過語意分割模型將特定的類別切割出來，下圖將樹(Tree)的部分切割出來。
+
 ![](pictures_4/CNN1.png)
 
 接下來我們再將某個 Unit 的 Feature map 與其分割出的 Mask 做比對，看看相不相似，下圖為此論文架構的一部分。透過這方式一一比對，當 Feature map 與某個類別的 Mask 長得夠像的時候，我們可以認定這個 Unit 與某類別之間是有較大關聯性的。
+
 ![](pictures_4/CNN2.png)
+
+透過上面的方式，我們能夠知道哪些 Unit 與某類別是相關的，但是我們卻不知道更動這些 Unit 的 Feature map 與最終產生出來的圖片(Output)有什麼關聯。
+
+可能這個 Unit 與該類別雖然有關聯，但是實際上對產生出來的圖片影響不大，透過這個方式我們可以將其類別的 Unit 進行排序，排名(Rank)出對其類別最有影響力的 Unit，此實驗是對每個類別取 1…n（n=20） Units。我們要先透過 Dissection 得知哪些 Unit 是與該類別相關，再經由 Intervention 明白改動這個 Unit 到底對最終輸出的該類別有著多大的影響。因此我認為 Dissection 與 Intervention 的關係可以用 “方向” 與 “能量大小” 的關係作比喻。
+
+如下圖：上半部為 Dissection 解開，下半部為 Intervention 介入
+
+![](pictures_4/CNN6.png)
+
+先看 G 的架構，對於圖像生成的任務，通常會輸入雜訊 z，然後生成圖片 x，而之所以可以生成 x 是因為 z 再經過一層一層的 layer 慢慢的轉變成圖片，
+
+這邊的想法是我們提取出第 r 層，來探討他每個 Unit 的 Feature map，而他的 Feature map 會繼續影響著後續的 f(layers) 最終生成圖片。
+
+而我們的最終目的是希望找出哪些 Unit 是對結果有顯著影響的。
+
+這邊我們可以這樣想像，假設我們要生出辦公室的場景，那可能有些 Unit 各自負責桌子、椅子、人。但是剛好這張圖片生成出來後，只有桌子和椅子，我們希望找到著重於桌子和椅子的 Unit，這樣就能對他做移除/修改的動作。因此我們定義下面這公式
+
+參數定義：
+- r : 某層 Layer， 可看架構圖 generator(G) 的部分
+- U : 哪些 Unit 是對目前想要操作的類別有影響的，舉例我可能想要修改椅子而已，我們要找出哪些 units 對椅子有影響。
+- U- : U 的補數，即為我們不感興趣的 units.
+
 ![](pictures_4/CNN3.png)
 
 ![](pictures_4/CNN4.png)
 ![](pictures_4/CNN5.png)
-![](pictures_4/CNN6.png)
+
 
 ## Acknowledgments
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
