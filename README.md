@@ -46,7 +46,7 @@ GAN paint app的工作原理是直接激活或者去激活深度網絡中的神�
 MIT CSAIL, MIT-IBM Watson AI Lab, CUHK, IBM Research <br>
 In arXiv, 2018.
 
-## 開始安裝（本專案使用church model示範）
+## 開始安裝（本專案使用church_Outdoor model示範）
 Let's set up the environment and dissect a `churchoutdoor` GAN. This requires some CUDA-enabled GPU and some disk space.
 
 ### 安裝步驟
