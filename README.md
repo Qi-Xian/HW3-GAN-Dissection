@@ -170,6 +170,7 @@ Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自�
 
 透過語意分割模型將特定的類別切割出來，下圖將樹(Tree)的部分切割出來。
 ![](pictures_4/CNN1.png)
+
 接下來我們再將某個 Unit 的 Feature map 與其分割出的 Mask 做比對，看看相不相似，下圖為此論文架構的一部分。透過這方式一一比對，當 Feature map 與某個類別的 Mask 長得夠像的時候，我們可以認定這個 Unit 與某類別之間是有較大關聯性的。
 ![](pictures_4/CNN2.png)
 ![](pictures_4/CNN3.png)
