@@ -146,7 +146,19 @@ Other URLs:
 |正確率 |15% | 70% | 99%  （計算方式：正確張數/總張數）
 ## 3.  Compare with other method（Detectron method）
 
-Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自定義模型，並把它們用在增強現實、社區完整性等各種各樣的任務中。在 Detectron 中訓練完畢的模型可以直接通過高效的 Caffe 2  運行時部署在雲服務器和移動設備上，Detectron  的 GitHub  項目中還帶有超過 70 個預訓練的基準模型可以用於性能對比。Detectron 在背後支持的算法為實例分割之類的重要計算機視覺任務提供了直觀的模型，也在視覺感知系統這一整個研究社區的研究重點近幾年的飛速發展中起到了重要作用。如下圖所示：
+Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自定義模型，並把它們用在增強現實、社區完整性等各種各樣的任務中。在 Detectron 中訓練完畢的模型可以直接通過高效的 Caffe 2  運行時部署在雲服務器和移動設備上，Detectron  的 GitHub  項目中還帶有超過 70 個預訓練的基準模型可以用於性能對比。Detectron 在背後支持的算法為實例分割之類的重要計算機視覺任務提供了直觀的模型，也在視覺感知系統這一整個研究社區的研究重點近幾年的飛速發展中起到了重要作用。如下圖所示所示（偵測照片上的人群）：
+
+![](pictures_3/detectron.jpeg)
+
+## 優缺點比較
+
+同樣是找IoU的判別，但是facebook的演算法，在找obejct部分整體訓練速度來得GAN Dissecting快，同樣是輕量化的架構，GAN Dissecting使用pytorch輕量化框架，而Detectron則是用caffee2，但是由於facebook有加入加速器演算法，所以整體效能來說，會快一些。
+
+
+|  內容 | GAN Dissecting   | Detectron 
+| ---   |--- | ---  
+|效能   |慢 | 快 | 
+|正確率 |99% | 99%  
 
 
 
@@ -154,5 +166,5 @@ Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自�
 ## Acknowledgments
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
 
-##reference
+## reference
 參考網頁:[Inpainting](https://github.com/akmtn/pytorch-siggraph2017-inpainting)
