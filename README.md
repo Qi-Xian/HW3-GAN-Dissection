@@ -2,13 +2,13 @@
 
 ## To-Do
 
-1.  Generate images with GANPaint
+1.  使用GANPaint產生圖片
 2.  Dissect any GAN model and analyze what you find
 3.  Compare with other method
 
 
 
-
+## 使用GANPaint產生圖片
 ## GANDissect介紹 <a href="http://gandissect.res.ibm.com/ganpaint.html?project=churchoutdoor&layer=layer4"><img src='doc/ganpaint.gif' align="right" height="259"></a>
 
 [**專案**](https://gandissect.csail.mit.edu/) | [**Demo**](http://gandissect.res.ibm.com/ganpaint.html?project=churchoutdoor&layer=layer4) | [**論文**](https://arxiv.org/pdf/1811.10597.pdf) | [**影片**](http://tiny.cc/gandissect) <br>
@@ -21,7 +21,11 @@ This repo allows you to dissect a GAN model. It provides the dissection results 
 
 GAN paint app的工作原理是直接激活或者去激活深度網絡中的神經元組，這些神經元被訓練用來生成圖像。左邊每個按鈕（如door、brick等）都對應20個神經元。該app表明，通過學習繪畫，GAN網絡還能學習樹、門還有屋頂等對象。通過直接切換神經元，你可以觀察該網絡建模的視覺世界的結構。
 
+使用了
 
+![](pictures_1/1.png)
+![](pictures_1/2.png)
+![](pictures_1/3.png)
 
 
 
