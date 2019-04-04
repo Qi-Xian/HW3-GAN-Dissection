@@ -1,4 +1,4 @@
-#HW3-GAN-Dissection
+# HW3-GAN-Dissection
 
 ## To-Do
 
@@ -192,16 +192,26 @@ Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自�
 
 這邊我們可以這樣想像，假設我們要生出辦公室的場景，那可能有些 Unit 各自負責桌子、椅子、人。但是剛好這張圖片生成出來後，只有桌子和椅子，我們希望找到著重於桌子和椅子的 Unit，這樣就能對他做移除/修改的動作。因此我們定義下面這公式
 
-參數定義：
+**參數定義：**
 - r : 某層 Layer， 可看架構圖 generator(G) 的部分
 - U : 哪些 Unit 是對目前想要操作的類別有影響的，舉例我可能想要修改椅子而已，我們要找出哪些 units 對椅子有影響。
 - U- : U 的補數，即為我們不感興趣的 units.
 
 ![](pictures_4/CNN3.png)
 
+Dissection 解開：此處我們要找到哪些 Unit 對該類別有影響，找尋哪些 Unit 的 Feature maps 與我們 Semantic segmentation 的模型預測出來的 Mask 相近。而此處使用 IoU 的方式
+
 ![](pictures_4/CNN4.png)
+
+參數定義：
+
+- ↑ : 將 Feature maps Resize 成 x 的大小。
+- Sc : 給定 x 後，獲得 c 這個類別的 Mask， 架構圖segmentation黃色處。
+- t : threshold，這部分比較複雜，有興趣的人在自己去了解。
+
 ![](pictures_4/CNN5.png)
 
+透過這方式，我們可以知道 r 的哪些 Unit 與某個類別有著高度相關性。
 
 ## Acknowledgments
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
