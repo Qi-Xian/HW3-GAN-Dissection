@@ -162,7 +162,14 @@ Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自�
 
 
 ## 補充（論文原理介紹）
-![](pictures_4/c.jpeg)
+![](pictures_4/CNN.png)
+![](pictures_4/CNN1.png)
+![](pictures_4/CNN2.png)
+![](pictures_4/CNN3.png)
+
+![](pictures_4/CNN4.png)
+![](pictures_4/CNN5.png)
+![](pictures_4/CNN6.png)
 
 ## Acknowledgments
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
