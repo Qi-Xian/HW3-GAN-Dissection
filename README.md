@@ -125,9 +125,16 @@ Other URLs:
 
 成功啟動church_outdoor_model，我們來分析layer1, layer4, layer7 結果ioa（interest of area）狀況：
 
+### layer1層分析
+如下圖，我們分析出layer1層的IoA的狀況，在grass及tree兩張圖，ioa的錯誤率是蠻大的，這是因為第一層的狀況仍未訓練出好的參數，導致錯誤率發生極大。
+
 ![](pictures2/layer1.png)
+### layer4層分析
+如下圖，我們分析出layer4層的IoA的狀況，除了tree其中一張圖沒找到符合的元素外，ioa的情況其實訓練得非常好，幾乎可以找得到我們要的target。
 ![](pictures2/layer4_1.png)
 ![](pictures2/layer4_2.png)
+### layer7層分析
+如下圖，整體的ioa表現的非常好，該有的目標都有達到（tree, cloud, grass, sky, window），訓練生成的目標達到我們的期望（優於layer1 及 layer4）
 ![](pictures2/layer7_1.png)
 ![](pictures2/layer7_2.png)
 
