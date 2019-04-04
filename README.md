@@ -167,6 +167,6 @@ Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自�
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
 
 ## reference
-[Inpainting](https://github.com/akmtn/pytorch-siggraph2017-inpainting)<
+[Inpainting](https://github.com/akmtn/pytorch-siggraph2017-inpainting)<br>
 [facebookresearch/Detectron](https://github.com/facebookresearch/Detectron)
 
