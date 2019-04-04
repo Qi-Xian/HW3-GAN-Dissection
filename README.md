@@ -1,10 +1,10 @@
 # homework3-GAN-Dissection
 
-## Assign
+## To-Do
 
-1.  10% (Generate images with GANPaint)
-2.  20% (Dissect any GAN model and analyze what you find)
-3.  20% (Compare with other method)
+1.  Generate images with GANPaint
+2.  Dissect any GAN model and analyze what you find
+3.  Compare with other method
 
 reference:
 
