@@ -8,7 +8,7 @@
 
 
 
-## 使用GANPaint產生圖片
+## 1.使用GANPaint產生圖片
 ## GANDissect介紹 <a href="http://gandissect.res.ibm.com/ganpaint.html?project=churchoutdoor&layer=layer4"><img src='doc/ganpaint.gif' align="right" height="259"></a>
 
 [**專案**](https://gandissect.csail.mit.edu/) | [**Demo**](http://gandissect.res.ibm.com/ganpaint.html?project=churchoutdoor&layer=layer4) | [**論文**](https://arxiv.org/pdf/1811.10597.pdf) | [**影片**](http://tiny.cc/gandissect) <br>
@@ -36,8 +36,8 @@ GAN paint app的工作原理是直接激活或者去激活深度網絡中的神�
 **結論：我們在實驗過程發現，只要是相關性高的元素，Ganpiant會給我們最佳的繪圖效果，例如，當我們要在草地上加樹時，生成的效果最大，但是如果我們要在天空增加樹林，效果生成就不會太大，但是在天空加入雲效果就會非常的好：**
 
 
-
-## Overview
+## 2.Dissect any GAN model and analyze what you find
+## 大綱介紹
 
 <img src="doc/teaser.jpg" width="800px" clear="both" />
 
@@ -46,10 +46,10 @@ GAN paint app的工作原理是直接激活或者去激活深度網絡中的神�
 MIT CSAIL, MIT-IBM Watson AI Lab, CUHK, IBM Research <br>
 In arXiv, 2018.
 
-## Getting Started
+## 開始安裝（本專案使用church model示範）
 Let's set up the environment and dissect a `churchoutdoor` GAN. This requires some CUDA-enabled GPU and some disk space.
 
-### Setup
+### 安裝步驟
 
 To install everything needed from this repo, have `conda` available,
 and run:
@@ -74,7 +74,7 @@ the example networks, `python -m netdissect --download` will download
 just the data and models needed for netdissect itself.
 
 
-### Dissecting a GAN
+### Dissecting a GAN（我們使用churchoutdoor_model）
 
 GAN example: to dissect three layers of the LSUN living room progressive
 GAN trained by Karras:
@@ -111,7 +111,6 @@ python -m netdissect.server --address 0.0.0.0
 <img src='doc/ganter_screenshot.png' width='40%' align='right' style="padding:3px;">
 
 
-
 The editing UI (right) is served at [http://localhost:5001/](http://localhost:5001/) .
 
 Other URLs:
@@ -123,6 +122,11 @@ Other URLs:
 - [http://localhost:5001/data/livingroom/edit.html](http://localhost:5001/data/livingroom/edit.html) a dissection-based
     interface for testing interventions.
 - TODO: [http://localhost:5001/ganpaint.html](http://localhost:5001/ganpaint.html) will serve GANpaint
+
+成功啟動church_outdoor_model，我們來分析layer1, layer4, layer7 結果ioa（interest of area）狀況：
+
+
+
 
 ## Acknowledgments
 Code is from [gandissect](https://github.com/CSAILVision/GANDissect). All credit goes to the authors of [gandissect](https://gandissect.csail.mit.edu/), David Bau, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman and Antonio Torralba.
