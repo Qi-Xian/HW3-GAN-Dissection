@@ -162,8 +162,15 @@ Detectron 在 2018 年初被發布時，Facebook 團隊用這個平台訓練自�
 
 
 ## 補充（論文原理介紹）
+概念：我們可以知道CNN是有所謂的空間相關係。
 ![](pictures_4/CNN.png)
+那我們經過上面這個示意圖能夠知道，每個 pixel（Feature map） 都是對應到前面 Feature map 的某區域。
+
+先講結論：如果該 Unit 與某個類別是相關的，那麼其 Feature map(想像成熱力圖)會與語意分割後該類別的 Mask 相似。
+
+透過語意分割模型將特定的類別切割出來，下圖將樹(Tree)的部分切割出來。
 ![](pictures_4/CNN1.png)
+接下來我們再將某個 Unit 的 Feature map 與其分割出的 Mask 做比對，看看相不相似，下圖為此論文架構的一部分。透過這方式一一比對，當 Feature map 與某個類別的 Mask 長得夠像的時候，我們可以認定這個 Unit 與某類別之間是有較大關聯性的。
 ![](pictures_4/CNN2.png)
 ![](pictures_4/CNN3.png)
 
